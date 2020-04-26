@@ -4,43 +4,13 @@
 
 // ====---- Task 01 Start
 
-const namesArray = ['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong'];
-
-const logItems = function(array) {
-  for (let i = 0; i < namesArray.lenght +1; i += 1); {
-    console.log('0', i, ' - ', namesArray[i]);
-  }
-};
-
-const result = logItems(namesArray);
-
+const namesArray = ["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"];
 console.log(namesArray);
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
-
-
-
-// console.log('TASK 01');
-
-// let name = 'Генератор защитного поля ';
-// let price = 1000;
-
-// console.log(
-//   'Выбран ', 
-//   name , 
-//   'цена за штуку',
-//   price,
-//   ' кредитов'
-// );
-
-// price = 2000;
-
-// console.log(
-//   'Выбран ', 
-//   name , 
-//   'цена за штуку',
-//   price,
-//   ' кредитов'
-// );
+const logItems = function (array) {
+  for (let i = 0; i < array.length; i += 1)
+  {
+    console.log(i, ' - ', array[i]);
+  }
+};
+const result = logItems(namesArray);
