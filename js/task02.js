@@ -1,18 +1,37 @@
-/* eslint-disable no-console */
-// eslint-disable prefer-const
-// eslint-disable no-unused-vars
+// ---  Task Description
+// Напиши скрипт подсчета стоимости гравировки украшений. Для этого создай функцию calculateEngravingPrice(message, pricePerWord) принимающую строку (в строке будут только слова и пробелы) и цену гравировки одного слова, и возвращающую цену гравировки всех слов в строке.
+
+// const calculateEngravingPrice = function(message, pricePerWord) {
+//   // твой код
+// };
 
 // ====---- Task 02 Start
-console.log('TASK 02');
+console.log("TASK 02");
 
-const totalNumber = 100;
-const orderedNumber = 80;
+const calculateEngravingPrice = function (message, pricePerWord) {
+  console.log('Price for enagraving of:"', message, '" is:');
+  return message.split(" ").length * pricePerWord;
+};
 
-console.log('Кол-во товаров на складе', totalNumber);
-console.log('Кол-во товаров в закзае', orderedNumber);
+/* ==-- Вызовы функции для проверки работоспособности твоей реализации. */
+console.log(
+  calculateEngravingPrice(
+    "Proin sociis natoque et magnis parturient montes mus",
+    10
+  )
+); // 80
 
 console.log(
-  totalNumber > orderedNumber
-    ? 'Заказ оформлен, с вами свяжется менеджер'
-    : 'На складе недостаточно твоаров'
-);
+  calculateEngravingPrice(
+    "Proin sociis natoque et magnis parturient montes mus",
+    20
+  )
+); // 160
+
+console.log(
+  calculateEngravingPrice("Donec orci lectus aliquam est magnis", 40)
+); // 240
+
+console.log(
+  calculateEngravingPrice("Donec orci lectus aliquam est magnis", 20)
+); // 120

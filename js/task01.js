@@ -4,7 +4,7 @@
 
 // ====---- Task 01 Start
 
-const namesArray = ["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"];
+const namesArray = ["Mango", "Poly", "Ajax", "Lux", "Jay", "Konger"];
 console.log(namesArray);
 
 const logItems = function (array) {
@@ -13,4 +13,4 @@ const logItems = function (array) {
     console.log(i, ' - ', array[i]);
   }
 };
-const result = logItems(namesArray);
+logItems(namesArray);

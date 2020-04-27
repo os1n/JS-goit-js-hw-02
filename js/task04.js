@@ -1,45 +1,45 @@
+// Напиши функцию formatString(string) которая принимает строку и форматирует ее если необходимо.
+
+//     Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
+//     Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
 
 // ====---- Task 04 Start
 console.log("TASK 04");
 
-// На счету пользователя есть 23580 кредитов, значение хранится в переменной credits (создай и присвой). Пользователь решает купить ремонтных дроидов, которые стоят по 3000 кредитов за штуку. Цена одного дроида хранится в переменной pricePerDroid (создай и присвой).
-// При посещении страницы, используя prompt, необходимо спросить количество дроидов которые пользователь хочет купить и сохранить в переменную.
-// Напиши скрипт который:
-//     Если в prompt была нажата кнопка Cancel, выводит в консоль сообщение 'Отменено пользователем!'.
-//     В противном случае, рассчитывает общую цену заказа и сохраняет в переменной totalPrice.
-//     Проверяет сможет ли пользователь оплатить заказ:
-//         если сумма к оплате превышает количество кредитов на счету, выводи в консоль сообщение 'Недостаточно средств на счету!'.
-//         в противном случае необходимо посчитать остаток кредитов на счету и вывести сообщение 'Вы купили [число] дроидов, на счету осталось [число] кредитов.'.
-
-let credits = 23580;
-const pricePerDroid = 3000;
-let droidNumber = prompt("Какое количество дроидов хотите купить?");
-let serverRespond;
-let totalPrice = 0;
-
-switch (droidNumber) {
-  case null:
-    serverRespond = 'Отменено пользователем!';
-    alert(serverRespond);
-    break;
-
-  // case :
-  //     serverRespond = "Введено недопустимое число!";
-  //   break;
-
-  default:
-    totalPrice = droidNumber * pricePerDroid;
-    const serverRespond1 = `Вы купили ${droidNumber} дроидов, на счету осталось ${credits - totalPrice} кредитов`;
-    console.log(serverRespond1);
-    
-    alert(
-      totalPrice > credits ? 'Недостаточно средств на счету!' : serverRespond1
+const formatString = function (string) {
+  let resultString = "";
+  if (string.length > 40) {
+    console.log(
+      `Length of the string (${string}) is (${string.length}) MORE than 40`
     );
-    break;
-}
+    // for (let i = 0; i <= 39; i += 1) {
+    //   resultString += string[i];
+    // }
+    // return console.log(resultString, `(Length = ${resultString.length})`);
+    resultString = string.substring(0, 40);
+    return console.log(resultString, `(Length = ${resultString.length})`);
+  } else {
+    return console.log(
+      `Length of the string (${string}) is (${string.length}) LESS than 40`
+    );
+  }
+};
 
-console.log(credits);
-console.log(droidNumber, " * ", pricePerDroid, "= ", totalPrice);
-console.log(credits - totalPrice);
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(formatString("Curabitur ligula sapien, tincidunt non."));
+// вернется оригинальная строка
 
-//   console.log(passCheck);
+console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
+// вернется форматированная строка
+
+console.log(formatString("Curabitur ligula sapien."));
+// вернется оригинальная строка
+
+console.log(
+  formatString(
+    "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
+  )
+);
+// вернется форматированная строка

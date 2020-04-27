@@ -1,44 +1,59 @@
-// Напиши скрипт который просит посетителя ввести число в prompt до тех пор, пока посетитель на нажмет Cancel и каждый раз добавляет введенное значение к общей сумме.
+// Напиши скрипт со следующим функционалом:
 
-//     При загрузке страницы пользователю предлагается в prompt ввести число. Ввод добавляется к значению переменной total.
-//     Операция ввода числа продолжается до тех пор, пока пользователь не нажмет кнопку Cancel в prompt.
-//     После того как пользователь прекратил ввод нажав кнопку Cancel, показать alert со строкой 'Общая сумма чисел равна [сумма]'.
+//     При загрузке страницы пользователю предлагается в prompt ввести число. Ввод сохраняется в переменную input и добавляется в массив чисел numbers.
+//     Операция ввода числа пользователем и сохранение в массив продолжается до тех пор, пока пользователь не нажмет Cancel в prompt.
+//     После того как пользователь прекратил ввод нажав Cancel, если массив не пустой, необходимо посчитать сумму всех элементов массива и записать ее в переменную total. Используй цикл for или for...of. После чего в консоль выведи строку 'Общая сумма чисел равна [сумма]'.
 
-//     bell Делать проверку того, что пользователь ввел именно число, а не произвольный набор символов, не нужно. Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
-
-// let input;
-// let total = 0;
+// bell Делать проверку того, что пользователь ввел именно число, а не произвольный набор символов, не обязательно. Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt записывать в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
 
 // ====---- Task 06 Start
 console.log("TASK 06");
 
-let input = 0;
-let inputN;
+let numEntered;
+const numbers = [];
 let total = 0;
 
-while (input !== null) {
-  input = prompt(`Введите число. Для отмены нажимет ESC.`);
-  console.log(input);
-  console.log(typeof input);
+const sumOfInput = function () {
+  let counter = 0;
+ 
 
-  inputN = Number(input);
-  console.log(inputN);
-  console.log(typeof inputN);
-  console.log(Number.isNaN(inputN));
+  do {
+    numEntered = prompt("Enter number or press ESC to exit.");
 
-  //total += Number(input);
+    if (isNaN(numEntered)) {
+      alert("Введено не число, попробуйте еще раз!");
+      continue;
+    }
 
-  if (!Number.isNaN(inputN)) {
-    total += Number(input);
-    console.log(Number(input));
-    // console.log(typeof Number(input));
-    // console.log(Number.isNaN(input));
-  } else {
-    console.log(`Введено неправильный тип данных`);
-    alert(`Введено неправильный тип данных`);
-    // break;
+    if (numEntered === null) {break;}
+    
+      numbers[counter] = parseInt(numEntered);
+      //const numbers[counter] =  >= 18 ? 'adult' : 'child';
+      counter += 1;
+    
+
+  } while (1);
+
+  for (let number of numbers) {
+    total += number;
+    console.log(number);
   }
-}
 
-alert(`Общая сумма чисел равна ${total}`);
-console.log(total);
+  // for (let i = 0; i < counter - 1; i += 1) {
+  //   total += numbers[i];
+  // }
+};
+
+console.log(numbers);
+
+console.log(sumOfInput(), `Общая сумма чисел равна ${total}`);
+
+
+//  const arr = ['Bobby', 'John', 'Chris', 'Admin'];
+//  for (let name of arr) {
+//    if (name === 'John') {
+//      continue;
+//    }
+//    console.log(name);
+//  }
+//  console.log(arr);
