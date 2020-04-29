@@ -6,7 +6,7 @@
 // };
 
 // ====---- Task 02 Start
-console.log("TASK 02");
+console.log("====---- TASK 02");
 
 const calculateEngravingPrice = function (message, pricePerWord) {
   console.log('Price for enagraving of:"', message, '" is:');

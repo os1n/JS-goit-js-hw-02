@@ -4,10 +4,9 @@
 //     Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
 
 // ====---- Task 04 Start
-console.log("TASK 04");
+console.log("====---- TASK 04");
 
 const formatString = function (string) {
-  let resultString = "";
   if (string.length > 40) {
     console.log(
       `Length of the string (${string}) is (${string.length}) MORE than 40; will be shorten and added with '...'`
@@ -15,7 +14,9 @@ const formatString = function (string) {
     string = `${string.substring(0, 40)}...`; // shorten and add '...'
     return string;
   } else {
-    console.log(`Length of the string (${string}) is (${string.length}) - and is LESS than 40; shall stay as is.`);
+    console.log(
+      `Length of the string (${string}) is (${string.length}) - and is LESS than 40; shall stay as is.`
+    );
     return string;
   }
 };
