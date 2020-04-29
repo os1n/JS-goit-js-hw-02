@@ -10,18 +10,13 @@ const formatString = function (string) {
   let resultString = "";
   if (string.length > 40) {
     console.log(
-      `Length of the string (${string}) is (${string.length}) MORE than 40`
+      `Length of the string (${string}) is (${string.length}) MORE than 40; will be shorten and added with '...'`
     );
-    // for (let i = 0; i <= 39; i += 1) {
-    //   resultString += string[i];
-    // }
-    // return console.log(resultString, `(Length = ${resultString.length})`);
-    resultString = string.substring(0, 40);
-    return console.log(resultString, `(Length = ${resultString.length})`);
+    string = `${string.substring(0, 40)}...`; // shorten and add '...'
+    return string;
   } else {
-    return console.log(
-      `Length of the string (${string}) is (${string.length}) LESS than 40`
-    );
+    console.log(`Length of the string (${string}) is (${string.length}) - and is LESS than 40; shall stay as is.`);
+    return string;
   }
 };
 

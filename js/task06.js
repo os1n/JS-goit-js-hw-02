@@ -14,9 +14,6 @@ const numbers = [];
 let total = 0;
 
 const sumOfInput = function () {
-  let counter = 0;
- 
-
   do {
     numEntered = prompt("Enter number or press ESC to exit.");
 
@@ -25,29 +22,22 @@ const sumOfInput = function () {
       continue;
     }
 
-    if (numEntered === null) {break;}
-    
-      numbers[counter] = parseInt(numEntered);
-      //const numbers[counter] =  >= 18 ? 'adult' : 'child';
-      counter += 1;
-    
-
-  } while (1);
+    if (numEntered === null) {
+      break;
+    }
+    numbers.push(parseInt(numEntered));
+  } while (true);
 
   for (let number of numbers) {
     total += number;
     console.log(number);
   }
-
-  // for (let i = 0; i < counter - 1; i += 1) {
-  //   total += numbers[i];
-  // }
+  return total;
 };
 
 console.log(numbers);
 
-console.log(sumOfInput(), `Общая сумма чисел равна ${total}`);
-
+console.log(`Общая сумма чисел равна ${sumOfInput()}`);
 
 //  const arr = ['Bobby', 'John', 'Chris', 'Admin'];
 //  for (let name of arr) {

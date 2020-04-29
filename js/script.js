@@ -11,3 +11,12 @@ console.log('You are visiting a land page. Please follow the links to review all
   
   
 
+// const arr = [];
+
+// arr.push(1);
+// arr.push(2,3);
+// console.log(arr);
+
+let x = 'asd';
+x = x + 'asd';
+console.log(x);

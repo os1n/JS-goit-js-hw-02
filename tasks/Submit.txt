@@ -1,0 +1,5 @@
+Домашнее задание №01.
+Сайт:
+https://os1n.github.io/goit-js-hw-01/
+Исходный код (репозиторий):
+https://github.com/os1n/goit-js-hw-01/
